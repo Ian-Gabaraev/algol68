@@ -19,7 +19,7 @@ BEGIN #  Linear interpolation in Algol 68 #
 END;
 
 BEGIN
-    #
+    COMMENT
     Y
     *
     *                    700 
@@ -35,7 +35,7 @@ BEGIN
     **************************X
           |      |      |
          2018   2020   2024
-    #
+    COMMENT
 
 
     print(("X 1?", new line));
