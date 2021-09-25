@@ -24,6 +24,7 @@ BEGIN #  Binary search over a sorted array in Algol 68  #
             print((success message, new line));
             stop
         ELSE
+            print((not found message, new line));
             stop
         FI
     FI;
