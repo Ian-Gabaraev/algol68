@@ -1,0 +1,55 @@
+STRING success message   = "Found!";
+STRING not found message = "Not found";
+STRING out of bounds     = "Value is out of bounds";
+
+
+PROC binary search = ([] INT row, INT looking for) BOOL:
+BEGIN
+
+    BOOL in row := FALSE;
+    INT start  := 1;
+    INT end    := ELEMS row;
+    INT middle := ((end - start) % 2);
+
+    IF looking for > row[UPB row] OR looking for < row[LWB row]
+    THEN
+        print((out of bounds, new line));
+        stop
+    FI;
+
+    IF (middle) < 1
+    THEN
+        IF looking for = row[end] OR looking for = row[start]
+        THEN
+            print((success message, new line));
+            stop
+        ELSE
+            stop
+        FI
+    FI;
+
+    IF looking for = row[middle]
+    THEN
+        print((success message, new line));
+        in row := TRUE;
+        stop
+    ELIF looking for < row[middle]
+    THEN 
+        in row := binary search(row[1 .. middle-1], looking for)
+    ELSE
+        in row := binary search(row[middle+1 .. ELEMS row], looking for)
+    FI;
+
+    in row
+END;
+
+
+BEGIN
+
+    [] INT row = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 23);
+
+    BOOL result := FALSE;
+    result := binary search(row, read int);
+    print((result, new line))
+
+END

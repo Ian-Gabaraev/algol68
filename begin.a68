@@ -1,7 +1,0 @@
-(
-    IF INT a = read int;
-        a > 0
-    THEN print ((a, " is positive"))
-    ELSE print ((a, " is negative"))
-    FI
-)
