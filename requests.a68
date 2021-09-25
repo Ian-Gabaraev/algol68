@@ -1,0 +1,19 @@
+PROC good page = (REF STRING page) BOOL:
+    IF grep in string ("^HTTP/[0-9.]* 200", page, NIL, NIL) = 0
+    THEN TRUE
+    ELSE IF INT start, end;
+        grep in string ("^HTTP/[0-9.]* [0-9]+ [a-zA-Z ]*", page,start, end) = 0
+        THEN print (page[start : end])
+        ELSE print ("unknown error retrieving page")
+        FI;
+        FALSE
+    FI;
+
+BEGIN
+IF STRING reply;
+    INT rc = http content (reply, "www.gnu.org", "http://www.gnu.org/", 0);
+    rc = 0 AND good page (reply)
+THEN print ((reply, new line))
+ELSE print ((strerror (rc), new line))
+FI
+END
