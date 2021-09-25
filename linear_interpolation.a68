@@ -1,8 +1,8 @@
 PROC lerp = ([] INT row one, [] INT row two, INT point x) INT:
 BEGIN
-    COMMENT
+    CO
         Linear interpolation in Algol 68
-    COMMENT
+    CO
 
     IF ELEMS row one /= 2 OR ELEMS row two /= 2
     THEN
@@ -22,7 +22,7 @@ BEGIN
 END;
 
 BEGIN
-    COMMENT
+    CO
         Y
         *
         *                    700 
@@ -39,8 +39,7 @@ BEGIN
             |      |      |
             2018   2020   2024
 
-    COMMENT
-
+    CO
 
     print(("X 1?", new line));
     INT x one = read int;
