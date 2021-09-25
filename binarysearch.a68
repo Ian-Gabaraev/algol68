@@ -9,7 +9,6 @@ BEGIN #  Binary search over a sorted array in Algol 68  #
     INT end     := ELEMS row;
     INT start   := 1;
     INT middle  := (end - start) % 2;
-    BOOL in row := FALSE;
 
     IF looking for > row[UPB row] OR looking for < row[LWB row]
     THEN
@@ -32,7 +31,6 @@ BEGIN #  Binary search over a sorted array in Algol 68  #
     IF looking for = row[middle]
     THEN
         print((success message, new line));
-        in row := TRUE;
         stop
     ELIF looking for < row[middle]
     THEN 
