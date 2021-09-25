@@ -50,7 +50,7 @@ BEGIN
     print(("Y 2?", new line));
     INT y two = read int;
 
-    print(("Uknown X?", new line));
+    print(("X?", new line));
     INT uknown x = read int;
 
     [] INT row one = (x one, y one);
