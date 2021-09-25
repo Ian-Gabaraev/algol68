@@ -6,10 +6,10 @@ STRING out of bounds     = "Value is out of bounds";
 PROC binary search = ([] INT row, INT looking for) INT:
 BEGIN #  Binary search over a sorted array in Algol 68  #
 
-    BOOL in row := FALSE;
-    INT start   := 1;
     INT end     := ELEMS row;
+    INT start   := 1;
     INT middle  := ((end - start) % 2);
+    BOOL in row := FALSE;
 
     IF looking for > row[UPB row] OR looking for < row[LWB row]
     THEN
