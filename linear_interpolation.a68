@@ -1,5 +1,8 @@
 PROC lerp = ([] INT row one, [] INT row two, INT point x) INT:
-BEGIN #  Linear interpolation in Algol 68 #
+BEGIN
+    COMMENT
+        Linear interpolation in Algol 68
+    COMMENT
 
     IF ELEMS row one /= 2 OR ELEMS row two /= 2
     THEN
@@ -20,21 +23,22 @@ END;
 
 BEGIN
     COMMENT
-    Y
-    *
-    *                    700 
-    *-------------------*
-    *                   |
-    *      500          |
-    *-----*             |
-    *     |      ?      |
-    *     |             |
-    *     |             |
-    *     |             |
-    *     |             |
-    **************************X
-          |      |      |
-         2018   2020   2024
+        Y
+        *
+        *                    700 
+        *-------------------*
+        *                   |
+        *      500          |
+        *-----*             |
+        *     |      ?      |
+        *     |             |
+        *     |             |
+        *     |             |
+        *     |             |
+        **************************X
+            |      |      |
+            2018   2020   2024
+
     COMMENT
 
 
