@@ -1,0 +1,64 @@
+PROC lerp = ([] INT row one, [] INT row two, INT point x) INT:
+BEGIN #  Linear interpolation in Algol 68 #
+
+    IF ELEMS row one /= 2 OR ELEMS row two /= 2
+    THEN
+        stop
+    FI;
+    
+    INT x one = row one [1];
+    INT x two = row two [1];
+
+    INT y one = row one [2];
+    INT y two = row two [2];
+
+    INT uknown y = y one + ((point x - x one)*((y two - y one) % (x two - x one)));
+
+    uknown y
+
+END;
+
+BEGIN
+    #
+    Y
+    *
+    *                    700 
+    *-------------------*
+    *                   |
+    *      500          |
+    *-----*             |
+    *     |      ?      |
+    *     |             |
+    *     |             |
+    *     |             |
+    *     |             |
+    **************************X
+          |      |      |
+         2018   2020   2024
+    #
+
+
+    print(("X 1?", new line));
+    INT x one = read int;
+
+    print(("Y 1?", new line));
+    INT y one = read int;
+
+    print(("X 2?", new line));
+    INT x two = read int;
+
+    print(("Y 2?", new line));
+    INT y two = read int;
+
+    print(("Uknown X?", new line));
+    INT uknown x = read int;
+
+    [] INT row one = (x one, y one);
+    [] INT row two = (x two, y two);
+
+    INT point   = uknown x;
+
+    INT uknown := lerp(row one, row two, point);
+
+    print((uknown, new line))
+END
